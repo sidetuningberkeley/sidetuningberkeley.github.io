@@ -1,0 +1,324 @@
+<html>
+<head>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155051092-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155051092-1');
+</script>
+
+
+
+<style type="text/css">
+body {
+        font-weight:300;
+        font-size:17px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+
+    h1 {
+        font-weight:300;
+        font-size: 30px;
+    }
+    
+    .disclaimerbox {
+        background-color: #eee;     
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+    
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+    
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+    
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+    
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+    
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+    
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    hr
+    {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+</style>
+
+
+  
+      <title>Side-tuning</title>
+      <!-- <meta property="og:image" content="http://svl.stanford.edu/assets/images/pub/zamir_1612.09508.png"> -->
+      <!-- <meta property="og:title" content="Feedback Networks"> -->
+  </head>
+
+
+
+<body data-gr-c-s-loaded="true">
+    <br>
+          <center>
+            <span style="font-size:36px">Side-tuning: Network Adaptation via Additive Side Networks</span>
+              <table align="center" width="900px">
+                  <tbody><tr>
+                        <td align="center" width="200px">
+                            <center>
+                                <span style="font-size:18px"><a href="https://jozhang97.github.io/">Jeffrey O. Zhang</a></span>
+                            </center>
+                        </td>
+
+                        <td align="center" width="200px">
+                            <center>
+                                <span style="font-size:18px"><a href="https://alexsax.github.io/">Alexander Sax</a></span>
+                            </center>
+                        </td>
+
+
+                        <td align="center" width="200px">
+                            <center>
+                                <span style="font-size:18px"><a href="http://www.cs.stanford.edu/~amirz/">Amir R. Zamir</a></span>
+                            </center>
+                        </td>
+
+                        <td align="center" width="200px">
+                            <center>
+                                <span style="font-size:18px"><a href="https://geometry.stanford.edu/member/guibas/">Leonidas Guibas</a></span>
+                            </center>
+                        </td>   
+                      
+                        <td align="center" width="200px">
+                            <center>
+                                <span style="font-size:18px"><a href="https://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a></span>
+                            </center>
+                        </td>               
+
+              </tr></tbody></table>
+
+              <table align="center" width="300px">
+                  <tbody><tr>
+                      <td align="center" width="50px">
+                        <center>
+                            <!-- <span style="font-size:24px"><a href='./feedback_networks_2016.pdf'>[Paper]</a> -->
+                        </center>
+                      </td>
+
+              </tr></tbody></table>
+          </center>
+
+ 
+          <br>
+       <!--    <table align="center" width="840px">
+              <tbody><tr>
+                  <td width="400px">
+                    <center>
+                    <iframe width="840" height="472" src="https://www.youtube.com/embed/g_qYLEl58bI?rel=0&amp;autoplay=1&amp;loop=1&amp;showinfo=0&amp;controls=2&amp;playlist=g_qYLEl58bI&amp;version=3" frameborder="0" allowfullscreen=""></iframe>                  </center>
+                  </td>
+                </tr>
+                  <tr><td width="400px">
+                      <center>
+                        <span style="font-size:14px"><i.< i="">
+                      <center>
+                  </center></i.<></span></center></td>
+
+          </tr></tbody></table>
+
+        -->
+            <img src="./resources/sidetuning_pull.png" style="width:100%;">
+
+          <center><h1>Abstract</h1></center><table align="center" width="850px">
+              
+              <tbody><tr>
+                <td>
+                </td>
+              </tr>
+            </tbody></table>
+When training a neural network for a desired task, one may prefer to adapt a pre-trained network rather than start with a randomly initialized one -- due to lacking enough training data, performing lifelong learning where the system has to learn a new task while being previously trained for other tasks, or wishing to encode priors in the network via preset weights. The most commonly employed approaches for network adaptation are fine-tuning and using the pre-trained network as a fixed feature extractor, among others. 
+      <br>    <br>
+
+In this paper we propose a straightforward alternative: Side-Tuning. Side-tuning adapts a pre-trained network by training a lightweight "side" network that is fused with the (unchanged) pre-trained network using a simple additive process. This simple method works as well as or better than existing solutions while it resolves some of the basic issues with fine-tuning, fixed features, and several other common baselines. In particular, side-tuning is less prone to overfitting when little training data is available, yields better results than using a fixed feature extractor, and does not suffer from catastrophic forgetting in lifelong learning.  We demonstrate the performance of side-tuning under a diverse set of scenarios, including lifelong learning (iCIFAR, Taskonomy), reinforcement learning, imitation learning (visual navigation in Habitat), NLP question-answering (SQuAD v2), and single-task transfer learning (Taskonomy), with consistently promising results.
+
+          <br><br>
+          <hr>
+
+
+          <br>
+ 
+          <center><h1>Paper (Arxiv)</h1></center>
+            <a href="https://arxiv.org/pdf/1912.13503.pdf">
+                <img src="./resources/sidetuning_thumbnail.png" style="width:100%;border: 1px solid #AAA;">
+            </a>  
+
+
+        <center><h4>Supplementary Material</h4></center><a href="./resources/sidetuning_supmat_arxiv2019.pdf">
+                    <img src="./resources/sidetuning_supmat_thumbnail.png" style="width:100%;border: 1px solid #AAA;">
+                  </a><table align="center" width="300px">
+            
+              <tbody><tr>
+                  <!--<td width=300px align=left>-->
+                  <!--<td><a href="https://arxiv.org/pdf/1612.09508.pdf"><img  style="height:150px" src="http://cs.stanford.edu/people/karpathy/densecap/densecap.png" style="width:100%;border: 1px solid #AAA;"/></a></td>-->
+                  <!--<td><span style="font-size:20pt"><a href="https://arxiv.org/pdf/1612.09508.pdf"><br>Download</a></td>-->
+                  
+
+    
+              </tr><tr>
+                  <!--<td width=300px align=left>-->
+                  <!--<td><a href="https://arxiv.org/pdf/1612.09508.pdf"><img  style="height:150px" src="http://cs.stanford.edu/people/karpathy/densecap/densecap.png" style="width:100%;border: 1px solid #AAA;"/></a></td>-->
+                  <!--<td><span style="font-size:20pt"><a href="https://arxiv.org/pdf/1612.09508.pdf"><br>Download</a></td>-->
+                                  
+
+                  
+
+    
+              </tr>
+          </tbody></table>
+          <br><br>
+        
+          <table align="center" width="600px">
+              <tbody><tr>
+                  <td><span style="font-size:14pt"><center>
+                    <a href="https://arxiv.org/pdf/1912.13503">[Paper]</a>
+                    <a href="./resources/sidetuning_supmat_arxiv2019.pdf">[Supp.]</a>
+                    <!-- <a href="./resources/html_slides/index.html">[Slides]</a>                    -->
+                    <a href="./resources/sidetuning_bibtex.txt">[Bibtex]</a>                 
+<br> In Submission.
+                  </center></span></td>
+              </tr>
+          </tbody></table>
+
+          <br>
+          <hr>
+
+                <center><h1>Try our code</h1></center>
+
+          <center>
+                <span style="font-size:28px">Code coming soon!</span></i>              
+                <!-- <span style="font-size:28px">&nbsp;<a href="https://github.com/amir32002/feedback-networks">[GitHub]</a> (New!) -->
+
+             </span><i></i>
+                <span style="font-size:28px"></span>
+              <br>
+              </center><table align="center" width="800px">
+              <tbody><tr></tr>
+          </tbody></table>
+
+  
+
+      <br>
+      <hr>
+      <br>
+
+          
+         
+
+        <br><br>
+
+        
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89674082-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11207779; 
+var sc_invisible=1; 
+var sc_security="b93dfb3c"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script><script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="web counter"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="//c.statcounter.com/11207779/0/b93dfb3c/1/" alt="web
+counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+
+      <!------------------------------------------------------------------>
+      <!-- Template credit: Phillip Isola: http://web.mit.edu/phillipi/ -->
+      <!------------------------------------------------------------------>
+
+</body>
+</html>
